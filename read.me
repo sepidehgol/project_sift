@@ -1,0 +1,23 @@
+# create file matlab
+function [hist,max_value]=calculate_oritation_hist(x,y,scale,gradient,angle,n)
+
+radius=round(6*scale);
+sigma=1.5*scale;
+[M,N,~]=size(gradient);
+radius_x_left=x-radius;
+radius_x_right=x+radius;
+radius_y_up=y-radius;
+radius_y_down=y+radius;
+
+if(radius_x_left<=0)
+    radius_x_left=1;
+end
+if(radius_x_right>N)
+    radius_x_right=N;
+end
+if(radius_y_up<=0)
+    radius_y_up=1;
+end
+if(radius_y_down>M)
+    radius_y_down=M;
+end
